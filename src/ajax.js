@@ -3,13 +3,13 @@ import config from './config'
 
 /*
  * Wrapper for axios AJAX library.
- * 
+ *
  * Basically, we use axios directly. But before axios can be used,
  * - we create an new axios instance
  * - give than instance an AJAX fetched CSRF token, which it will send as header 'X-CSRF-Token' with every request
  * - tell the instance that it should include credentials (cookie) with every request
  * - tell the instance that it should include the query parameter "?_format=json" with every request
- * 
+ *
  * Finally, we wrap this activity in a Promise and return it, so that callers can
  * rely on the promise to call their own callback on successful resolution of the promise
  * or an error handler if the promise gets rejected.
@@ -28,7 +28,7 @@ export default async () => {
       singleton = axios.create({
         baseURL: config.drupal_url, // every request is relative to this URL
         withCredentials: true, // include auth cookie in every request
-        headers: { 'X-CSRF-Token': csrf_token }, // include this header in every request
+  
         params: { _format: 'json' }, // add these query params to every request
       })
       console.log('Created new axios instance', singleton)
