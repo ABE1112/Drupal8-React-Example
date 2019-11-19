@@ -4,6 +4,9 @@ import { Nav, Navbar } from 'react-bootstrap';
 import styled from 'styled-components';
 
 const Styles = styled.div`
+@media (min-width: 900px) {
+  position: relative;
+
   .navbar {
     background-color: black;
   }
@@ -11,10 +14,11 @@ const Styles = styled.div`
   a, .navbar-brand, .navbar-nav .nav-link {
     color: #bbb;
 
-    &:hover {
+  &:hover {
       color: white;
     }
   }
+}
 `;
 
 export const NavigationBar = () => (
