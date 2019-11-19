@@ -27,4 +27,3 @@ dist
 coverage
 *.swp
 *.swo
-src/config.js
